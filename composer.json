@@ -1,0 +1,53 @@
+{
+    "name": "prunacatalin/filament-locale-switcher",
+    "description": "Drop-in topbar locale switcher for Filament v4/v5 panels. Session + per-user persistence, explicit locale list, render-hook dropdown.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["filament", "filament-plugin", "i18n", "locale", "translation"],
+    "authors": [
+        {
+            "name": "Catalin Pruna",
+            "email": "office@webdirect.dev",
+            "homepage": "https://webdirect.dev",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "filament/filament": "^3.0|^4.0|^5.0",
+        "illuminate/contracts": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^9.0|^10.0|^11.0",
+        "pestphp/pest": "^3.0|^4.0",
+        "pestphp/pest-plugin-laravel": "^3.0|^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Prunacatalin\\FilamentLocaleSwitcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Prunacatalin\\FilamentLocaleSwitcher\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Prunacatalin\\FilamentLocaleSwitcher\\LocaleSwitcherServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
